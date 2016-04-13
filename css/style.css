@@ -114,3 +114,33 @@ a {
                 content: url("../img/line.jpg");
                 margin: 0px 10px 0 14px;
             }
+
+h1 {
+    font-size: 38px;
+    color: #444;
+    margin-bottom: 43px;
+}
+
+    .thumbs-item {
+        width: 266px;
+        height: 266px;
+        display: inline-block;
+        margin-right: 37px;
+    }
+
+        .thumbs-item:nth-child(3n) {
+            width: 266px;
+            height: 266px;
+            display: inline-block;
+            margin-right: 0;
+        }
+
+    .thumbs-item-title {
+        margin: 7px 0 4px 0;
+    }
+
+    .thumbs-item-description {
+        color: #444;
+        font-family: arial, sans-serif;
+        font-size: 9pt;
+    }
