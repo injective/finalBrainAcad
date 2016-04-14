@@ -21,22 +21,20 @@ var cars = [
     }
 ];
 
-
 function callback() {
     $('#results').append('<li>' + $(this).text() + '</li>');
 
-
 }
 
-$(function(){
+$(function() {
     $('#myModal').modal('show');
 
-    cars.forEach(function(car, i){
+    cars.forEach(function(car, i) {
         $('<div class="car">' + car.name + '</div>').css({
             background: car.color,
             width: '100px',
             height: car.height,
-            top: i*60,
+            top: i * 60,
             left: 0,
             textIndent: '-9999px'
         }).appendTo('#wrapper');
@@ -48,18 +46,18 @@ $(function(){
     }).text('1000');
 });
 
-$('#btn').click(function(){
-    $('.car').each(function(){
+$('#btn').click(function() {
+    $('.car').each(function() {
         $(this).animate({
             left: 700
-        }, Math.random()*3000 + 1000, 'swing', callback);
+        }, Math.random() * 3000 + 1000, 'swing', callback);
     });
 
-    if($('#select').value == $('li:first-child').text()){
+    if ($('#select').value == $('li:first-child').text()) {
         alert('fsdfsdf');
     }
 });
 
-$('#select').change(function(){
+$('#select').change(function() {
     $('#money').text(this.value);
 });

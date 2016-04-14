@@ -52,7 +52,39 @@ module.exports = function(grunt) {
         },
         clean: {
             build: {
-                src: ['dest']
+                src: ['css']
+            }
+        },
+        watch: {
+            js: {
+                files: ['js/**/*.js'],
+                tasks: ['build-js']
+            },
+            css: {
+                files: ['less/**/*.less'],
+                tasks: ['build-css']
+            }
+        },
+        postcss: {
+            options: {
+                processors: [
+                    require('autoprefixer')({
+                        browsers: ['last 2 versions']
+                    })
+                ]
+            },
+            dist: {
+                src: 'css/*.css'
+            }
+        },
+        jscs: {
+            src: "js/**/*.js",
+            options: {
+                config: ".jscsrc",
+                esnext: true, // If you use ES6 http://jscs.info/overview.html#esnext
+                verbose: true, // If you need output with rule names http://jscs.info/overview.html#verbose
+                fix: true, // Autofix code style violations when possible.
+                requireCurlyBraces: [ "if" ]
             }
         }
     });
@@ -65,13 +97,27 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks("grunt-jscs");
 
-
-    grunt.registerTask('default', [
+    grunt.registerTask('build-js', [
+        'clean:js',
         'jshint:beforeconcat',
         'concat',
         'jshint:afterconcat',
         'babel',
         'uglify'
     ]);
+
+    grunt.registerTask('build-css', [
+        'clean:css',
+        'less',
+        'postcss:dist'
+    ]);
+
+    grunt.registerTask('default', [
+        'build-css',
+        'build-js'
+    ]);
+
 };

@@ -9,27 +9,12 @@ battledore.addEventListener('mousemove', moveBattledore, false);
 
 function moveBattledore(e) {
     var score = document.querySelector('.score');
-    var clientCoords = "( " + e.clientX + " )";
+    var clientCoords = '( ' + e.clientX + ' )';
     score.innerText = 'clientCoords' + clientCoords;
     battledore.style.left = parseInt(e.clientX) + 'px';
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//field.setProperty('height', function(){
+//Field.setProperty('height', function(){
 //    parseInt(document.documentElement.clientHeight) - parseInt(fieldStyle.getPropertyValue('margin-top')) -
 //        parseInt(fieldStyle.getPropertyValue('margin-bottom')) - parseInt(fieldStyle.getPropertyValue('padding-top')) -
 //        parseInt(fieldStyle.getPropertyValue('padding-bottom')) + 'px';

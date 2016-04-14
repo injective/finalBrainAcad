@@ -1,0 +1,6 @@
+{
+  "preset": "yandex",
+  "requireCurlyBraces": null,
+  "requireSpacesInAnonymousFunctionExpression": false,
+  "validateLineBreaks": "CRLF"
+}
