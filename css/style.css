@@ -1,11 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Alegreya:700);
+
 body {
     background-color: #eee;
     font-family: georgia, serif;
 }
 
+*::selection {
+    background-color: rgba(155, 132, 64, 0.8);
+}
+
 a {
     text-decoration: none;
     color: #9B8440;
+}
+
+a::selection {
+    color: #222;
 }
 
     .mainWrapper {
@@ -57,6 +67,7 @@ a {
                             position: relative;
                         }
 
+
                         .navigation li:last-child::after {
                             content: "";
                             margin: 0 0 0 2px;
@@ -89,7 +100,7 @@ a {
         .homepic {
             width: 880px;
             height: 660px;
-            background: url("../img/b2f6cf5739d35780600b5353cc267c1d.jpg") no-repeat;
+            background: url("../img/home.jpg") no-repeat;
         }
 
             .homepic-text {
@@ -114,12 +125,13 @@ a {
 
             .footer span:after {
                 content: url("../img/line.jpg");
-                margin: 0px 10px 0 14px;
+                margin: 0 10px 0 14px;
                 top: -3px;
                 position: relative;
             }
 
 h1 {
+    font-family: 'Alegreya', serif;
     font-size: 38px;
     color: #444;
     margin-bottom: 43px;
@@ -134,7 +146,14 @@ h1 {
         height: 266px;
         display: inline-block;
         margin-right: 37px;
+        transition: all 0.5s;
     }
+
+        .thumbs-item-cover {
+            width: 266px;
+            height: 200px;
+            background: url("../img/thumb.jpg") no-repeat;
+        }
 
         .thumbs-item:nth-child(3n) {
             width: 266px;
@@ -218,12 +237,16 @@ h1 {
 
 
     /*  ABOUT  */
-    .detailpicAbout {
+
+    .pictureAbout {
         width: 880px;
         height: 280px;
         background: url("../img/about.jpg");
         margin-bottom: 40px;
     }
+
+
+
 
     .sectionAbout {
         width: 880px;
@@ -268,3 +291,151 @@ h1 {
     .clear {
         clear: both;
     }
+
+
+
+
+
+/*   *********************  @MEDIA  ***********************   */
+
+
+@media screen and (max-width: 1135px) {
+    body {
+        background-color: #fff;
+    }
+
+    .mainWrapper {
+        width: 880px;
+    }
+}
+
+
+@media screen and (max-width: 895px) {
+    .mainWrapper, .contentWrapper, .detailpic, .pictureAbout, .sectionAbout, .homepic {
+        width: 625px;
+    }
+
+    .detailpic {
+        background: url('../img/contact-medium.jpg') no-repeat;
+    }
+
+    .pictureAbout {
+        background: url('../img/about-medium.jpg') no-repeat;
+    }
+
+    .homepic {
+        background: url('../img/home-medium.jpg') no-repeat;
+        height: 500px;
+    }
+
+    .thumbs-item {
+        margin: 0 22px;
+    }
+    .thumbs-item:nth-child(3n) {
+        margin: 0 22px;
+    }
+
+    .left, .center, .right {
+        display: block;
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+
+    .left {
+        font-size: 13pt;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .right {
+        margin: 15px 0;
+    }
+
+    .sectionAbout {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+
+    .footer {
+        margin-top: 75px;
+    }
+}
+
+
+
+@media screen and (max-width: 645px) {
+    .mainWrapper, .contentWrapper, .detailpic, .pictureAbout, .sectionAbout, .homepic {
+        width: 400px;
+    }
+
+    .detailpic {
+        background: url('../img/contact-small.jpg') no-repeat;
+        height: 200px;
+    }
+
+    .pictureAbout {
+        background: url('../img/about-small.jpg') no-repeat;
+        height: 179px;
+    }
+
+    .homepic {
+        background: url('../img/home-small.jpg') no-repeat;
+        height: 443px;
+    }
+
+    .homepic-text {
+        font-size: 19pt;
+        line-height: 40px;
+    }
+
+    .header {
+        padding-bottom: 50px;
+    }
+
+    .navigation {
+        margin-top: 20px;
+    }
+
+    .navigation li {
+        display: block;
+        font-size: 20pt;
+        margin-bottom: 10px;
+    }
+    .navigation li::after {
+        content: "";
+    }
+
+    .section {
+        padding-left: 0;
+        font-size: 12pt;
+    }
+
+    .contact-email {
+        width: 265px;
+    }
+
+    .thumbs-item {
+        margin: 0 68px;
+    }
+
+    .thumbs-item:nth-child(3n) {
+        margin: 0 68px;
+    }
+
+    .left, .center, .right {
+        width: 100%;
+    }
+
+    .left {
+        font-size: 16pt;
+    }
+
+    .center, .right {
+        font-size: 13pt;
+    }
+
+    .footer {
+        font-size: 12pt;
+    }
+}
