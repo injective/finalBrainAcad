@@ -5,6 +5,7 @@
     <title>Home</title>
     <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,12 +29,16 @@
                 <div class="navibar">
                     <span class="navibar-text">Home</span>
                 </div>
-                <div class="homepic">
-                    <p class="homepic-text">
-                        <a href="temp.html">Nemeth Interactive</a> is a design studio focusing mainly on branding,
-                        user interface design and online communication. <a href="portfolio.html">View portfolio</a>
-                    </p>
-                </div>
+
+                <a class="fancybox" rel="gallery1" href="img/tmp/IMG_4056.JPG" title="image 1">
+                    <img src="img/tmp/IMG_4056_sm.JPG" alt="" />
+                </a>
+                <a class="fancybox" rel="gallery1" href="img/tmp/IMG_4058.JPG" title="image 2">
+                    <img src="img/tmp/IMG_4058_sm.JPG" alt="" />
+                </a>
+                <a class="fancybox" rel="gallery1" href="img/tmp/IMG_4061.JPG" title="image 3">
+                    <img src="img/tmp/IMG_4061_sm.JPG" alt="" />
+                </a>
 
             </div>
 
@@ -45,7 +50,21 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"
+        integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $(".fancybox").fancybox({
+            openEffect	: 'none',
+            closeEffect	: 'none'
+        });
+    });
+</script>
+
 <script src="js/script.js"></script>
 </body>
 </html>

@@ -234,6 +234,9 @@ h1 {
         left: 25px;
     }
 
+    .navibar-text-contact {
+        margin-top: 9px;
+    }
 
 
     /*  ABOUT  */
@@ -293,7 +296,10 @@ h1 {
     }
 
 
-
+.btn-my {
+    height: 25px;
+    padding: 0;
+}
 
 
 /*   *********************  @MEDIA  ***********************   */
